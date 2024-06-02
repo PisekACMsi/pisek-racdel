@@ -70,7 +70,7 @@ function initTask(subTask) {
 			},
 		},
 		startingExample: { //vnaprej podana koda ukazov
-			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="uyoWZ+ya}o|EQ}sL~P~6" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="changeRobot" id="~TtmT}(Er)j?f!fJ-8Ij"><field name="PARAM_0">robot1</field><next><block type="move" id="0?/w]tzV.MT,J6[`3T,U"><field name="PARAM_0">NE</field><value name="PARAM_1"><shadow type="math_number" id="HIo6t#Vvf82Xdnm|4Ah*"><field name="NUM">1</field></shadow></value><next><block type="move" id="lq5,3Y/6n;um|pq;eS[2"><field name="PARAM_0">N</field><value name="PARAM_1"><shadow type="math_number" id="~[#opN93zj!{?0|5k}XW"><field name="NUM">1</field></shadow></value><next><block type="changeRobot" id="B26|Ek||wWLlGEeyX)MY"><field name="PARAM_0">robot0</field><next><block type="move" id="r4Nd|},dbfN@Nc}Bx?)G"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="x2eo[l/CWFToMu9*)56:"><field name="NUM">3</field></shadow></value><next><block type="move" id="a*0o7ZOLL9YxUz][)FwM"><field name="PARAM_0">W</field><value name="PARAM_1"><shadow type="math_number" id="*j60DiIC;l`9fH-v/U:n"><field name="NUM">3</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block><additional>{}</additional></xml>',
+			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="uyoWZ+ya}o|EQ}sL~P~6" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="changeRobot" id="~TtmT}(Er)j?f!fJ-8Ij"><field name="PARAM_0">robot0</field><next><block type="move" id="cKZrqjEzk+SYoi9_!!DK"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="KI[#rbH+sI3Zvo*ty1_-"><field name="NUM">6</field></shadow></value><next><block type="turn" id="k(EK9One5XseftD_Qpt0"><field name="PARAM_0">2</field><next><block type="move" id=")l2ZntcYmQvDv/8sFs/~"><field name="PARAM_0">N</field><value name="PARAM_1"><shadow type="math_number" id="fuijY##X-#52hS@:5u)C"><field name="NUM">6</field></shadow></value></block></next></block></next></block></next></block></next></block><additional>{}</additional></xml>',
 			// blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="Yx#}`-PvOO]HA4c0m7]F" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="move" id="4,KCbSD;_m-pZxtufj95"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="CIspNjAYb7a*vulaV1{P"><field name="NUM">2</field></shadow></value><next><block type="controls_repeat_ext" id="xz}GE@0Jjd*qSArjsPK7"><value name="TIMES"><shadow type="math_number" id="tt~vC4c`SoXp*D0{g`g4"><field name="NUM">10</field></shadow></value><statement name="DO"><block type="move" id="WeEDtrj7~6yjk(UWz0-I"><field name="PARAM_0">NW</field><value name="PARAM_1"><shadow type="math_number" id="opp6D`R,=GUHmyGwa.R?"><field name="NUM">2</field></shadow></value><next><block type="move" id="@1V??r6T.~WNU!1eUDFK"><field name="PARAM_0">W</field><value name="PARAM_1"><shadow type="math_number" id="0{K)gjXQYd/@ACLa1Zth"><field name="NUM">2</field></shadow></value><next><block type="move" id="z)fMk;vuUbh5Da[KR*xj"><field name="PARAM_0">SW</field><value name="PARAM_1"><shadow type="math_number" id="wB9]`B@g|8|}GB/1Tm@!"><field name="NUM">2</field></shadow></value><next><block type="move" id="GeZy`Ver;W!z`XSw45r`"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="sZB.rV,77Bqvtrj0kOBO"><field name="NUM">2</field></shadow></value><next><block type="move" id="M17`JoUY;BMn/l@i}fsy"><field name="PARAM_0">SE</field><value name="PARAM_1"><shadow type="math_number" id="Hd_3qqIk*y;,]lM_qE@,"><field name="NUM">2</field></shadow></value><next><block type="move" id="k}eq{We-_F/f])5ibq*S"><field name="PARAM_0">E</field><value name="PARAM_1"><shadow type="math_number" id="gu?bUo7P.xnCNvY|6aH#"><field name="NUM">2</field></shadow></value><next><block type="move" id="R/G.u-]Ep6Moi)~0{B}7"><field name="PARAM_0">NE</field><value name="PARAM_1"><shadow type="math_number" id="c1;Ku-whH9kw@[,TwuQK"><field name="NUM">2</field></shadow></value><next><block type="move" id="O9,[~_q4s8-*m-C/wuRr"><field name="PARAM_0">N</field><value name="PARAM_1"><shadow type="math_number" id="QI=mOSVV5;~2s5DK@fCD"><field name="NUM">2</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></next></block></next></block><additional>{}</additional></xml>',
 			// blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="Yx#}`-PvOO]HA4c0m7]F" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="move" id="4,KCbSD;_m-pZxtufj95"><field name="PARAM_0">W</field><value name="PARAM_1"><shadow type="math_number" id="CIspNjAYb7a*vulaV1{P"><field name="NUM">3</field></shadow></value><next><block type="destroy" id="KKQSCxKu;sV}+gJe?9=)"><field name="PARAM_1">obstacle</field><field name="PARAM_0">2</field><next><block type="move" id="XWv:_2Qbckm|{-94@`u,"><field name="PARAM_0">N</field><value name="PARAM_1"><shadow type="math_number" id="oR6vzE-h~{7oseb?hIAf"><field name="NUM">1</field></shadow></value></block></next></block></next></block></next></block><additional>{}</additional></xml>', 
 		},					
@@ -92,12 +92,14 @@ function initTask(subTask) {
 		numberOfRobots: 2,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["miha_all_8_sides.png", "miha_with_dog_all_8_sides.png"], side: 70, nbStates: 9, offsetX: -6, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["girl_all_8_sides.png", "girl_with_ball_all_8_sides.png"], side: 70, nbStates: 8, offsetX: -6, zOrder: 8, category: {'robot': true}, },
 			robot1: { img: ["dog_all_8_sides.png"], side: 70, nbStates: 8, offsetX: -6, zOrder: 8, category: {'robot': true, 'transportable': true}, transOrder: 0 },
 			obstacle: { num: 2, img: "red_floor.png", zOrder: 2, category: {'obstacle': true}},
 			button: { img: ["button_unpressed.png", "button_pressed.png"], zOrder: 2, category: {'button':true} },
 			door: { img: ["orange_floor.png", "yellow_floor.png"], zOrder: 2, category: [{'obstacle':true}, {'obstacle':false}]},
 			goal: { num: 3, side: 80, img:"flag2.png" },
+			marble: {num: 4, img: ["ball.png"], zOrder: 1, category: {'transportable':true},transOrder: 0},
+			hole: {num: 5, img: ["goal.png"], zOrder: 1, },
 		}, 
 		ignoreInvalidMoves: false,
 	};
@@ -106,21 +108,20 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[3, 1, 1, 1, 1, 2, 1, 1],
-					[1, 1, 1, 1, 1, 2, 1, 1],
-					[2, 2, 2, 1, 1, 2, 1, 1],
+					[5, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 2, 1, 1, 1, 2, 1],
 					[1, 1, 2, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 2, 2, 2],
+					[2, 2, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 2, 1],
 					[1, 1, 2, 1, 1, 1, 1, 1],
-					[1, 1, 2, 1, 1, 1, 1, 1],
+					[1, 1, 2, 1, 1, 1, 4, 1],
 				],
 				initItems: [
 					{ row: 0, col: 7, dir: 0, type: "robot0" },
 					{ row: 5, col: 0, dir: 0, type: "robot1" },
-					{ row: 3, col: 1, type: "button", id: 1},
-					{ row: 3, col: 5, type: "door", id: 1},
-					{ row: 5, col: 7, type: "button", id: 2},
-					{ row: 4, col: 2, type: "door", id: 2},
+					{row:3,col:3,type:"button",id:1},
+					{row:4,col:2,type:"door",id:1},
+				
 				],
 			},
 		],
