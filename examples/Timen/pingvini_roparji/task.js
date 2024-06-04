@@ -19,10 +19,7 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Marko ni pobral Tačka. Poskusi še enkrat.",
-					itemsDontExist: "Marko je uspešno pobral Tačka.",
-					itemsCoincide: "Marko je prišel do zelene zastavice. ",
-					itemsDontCoincide: "Marko ni prišel do zelene zastavice. Poskusi še enkrat. s",
+					itemsExist: "Niso uspeli u ukrasti zaklad.",
 				},
 				options:{
 					robotName0: "Pišče", 
