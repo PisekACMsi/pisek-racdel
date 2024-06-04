@@ -1,2 +1,3 @@
 kako se točno nastavlja sporočila.
 Kako omejimo število delčkov.
+Kako ustvarimo nove delčke.
