@@ -92,7 +92,7 @@ function initTask(subTask) {
 		itemTypes: {
 			robot0: { img: ["girl_all_8_sides.png",   "girl_with_ball_all_8_sides.png"], side: 70, nbStates: 8, offsetX: -6, zOrder: 8, category: {'robot': true}, },
 			robot1: { img: ["dog_all_8_sides.png"], side: 70, nbStates: 8, offsetX: -6, zOrder: 8, category: {'robot': true, 'transportable': true}, transOrder: 0 },
-			obstacle: { num: 2, img: "red_floor.png", zOrder: 2, category: {'obstacle': true}},
+			obstacle: { num: 2, img: "Trava.png", zOrder: 2, category: {'obstacle': true}},
 			button: { img: ["button_unpressed.png", "button_pressed.png"], zOrder: 2, category: {'button':true} },
 			door: { img: ["orange_floor.png", "grass4.png"], zOrder: 2, category: [{'obstacle':true}, {'obstacle':false}]},
 			goal: { num: 3, side: 80, img:"flag2.png" },
