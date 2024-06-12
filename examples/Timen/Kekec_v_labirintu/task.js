@@ -95,19 +95,26 @@ function initTask(subTask) {
 		// zOrder če imamo več objektov na isti celici to definira klakšen bo vrstni red prikaza
 		// isTransportable ali junak lahko pobere naš objekt
 		// za size velikokrat uporabikar cellSize
-		//
+		// nbStates upliva na pobiranje kako točno
 		itemTypes: {                                                                                            
 			robot0: { img: ["Kekec.png",   "Kekec.png"], side: 70, nbStates: 1, offsetX: -6, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img: "Trava.png", zOrder: 3, category: {'obstacle': true}},
 			obstacle2: { num: 3, img: "Mojca.png",offsetY: -20, zOrder: 4, category: {'obstacle': true}},
-			roza1:{num: 4, img:"Roza1.png"},
-			roza2:{},
+			//zakaj roze ne delajo
+			roza1:{num: 4, img:"Roza1.png",zOrder: 4},
+			roza1:{num: 5, img:"Roza2.png",zOrder: 4},
+			roza1:{num: 6, img:"Roza3.png",zOrder: 4},
+			roza1:{num: 7, img:"Roza4.png",zOrder: 4},
+			roza1:{num: 8, img:"Roza5.png",zOrder: 4},
+			strupenaroza1:{num: 9, img:"StrupenaRoza1.png",zOrder: 4},
+			strupenaroza1:{num: 10, img:"StrupenaRoza2.png",zOrder: 4},
+			strupenaroza1:{num: 11, img:"StrupenaRoza3.png",zOrder: 4},
 			//button: { img: ["button_unpressed.png", "button_pressed.png"], zOrder: 2, category: {'button':true} },
 			//door: { img: ["orange_floor.png", "grass4.png"], zOrder: 2, category: [{'obstacle':true}, {'obstacle':false}]},
 			//goal: { num: 3, side: 80, img:"flag2.png" },
 			//marble: {num: 4, img: ["ball.png"], zOrder: 1, category: {'transportable':true},transOrder: 0},
 			//hole: {num: 5, img: ["goal.png"], zOrder: 1, },
-			coin: {num:6, img:["hisa.png"],zOrder: 1, category:{"coin":true}}
+			coin: {num:15, img:["hisa.png"],zOrder: 1, category:{"coin":true}}
 		}, 
 		ignoreInvalidMoves: false,
 	};
@@ -119,12 +126,12 @@ function initTask(subTask) {
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 					[2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2],
 					[2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2],
-					[2, 2, 2, 1, 2, 1, 1, 1, 2, 1, 2],
-					[2, 2, 2, 1, 2, 6, 2, 1, 2, 1, 2],
-					[2, 2, 2, 1, 2, 2, 3, 1, 2, 1, 2],
-					[2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2],
+					[2, 2, 2, 9, 2, 1, 1, 1, 2, 6, 2],
+					[2, 2, 2, 1, 2, 15, 2, 1, 2, 1, 2],
+					[2, 2, 2, 8, 2, 2, 3, 7, 2, 10, 2],
+					[2, 2, 2, 1, 1, 9, 1, 1, 2, 5, 2],
 					[2, 1, 2, 2, 2, 2, 2, 2, 2, 1, 2],
-					[2, 1, 4, 1, 1, 1, 1, 1, 1, 1, 2],
+					[2, 1, 1, 11, 1, 1, 4, 1, 1, 1, 2],
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 					
 				],
