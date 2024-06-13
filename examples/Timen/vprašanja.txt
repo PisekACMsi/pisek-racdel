@@ -1,5 +1,7 @@
 kako se točno nastavlja sporočila.
-Kako omejimo število delčkov.
+
+Kako omejimo število delčkov. ugotovu sam samo preveri
+
 Kako ustvarimo nove delčke.
 
 kje so vsi ostali check za preverit pogoje ali je nalog aopravljena, na videiih jih je viliko v realnosti le 3?
@@ -8,11 +10,11 @@ v moveRobor notri npr ni collectibles kaj je s tem
 
 kako ustvarimo več testov
 
-kaj je z tekstovnimi nalogami
+kaj je z tekstovnimi nalogami!!!za napake in preverjanje itd
 
 kok se kej dela z želvjo grafiko
 
-A se da brdit skrite delčke
+A se da nrdit skrite delčke
 
 nake fiy naloge sin cos itd toplotna prevodnost ka je omenjenov videih a se s tem kej dela al ne
 
