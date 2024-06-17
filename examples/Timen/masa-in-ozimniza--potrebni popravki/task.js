@@ -19,8 +19,8 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Psiček ni pobral vseh pribolškov in šel k Marku",
-					itemsDontExist: "Tačko je pri marku in gresta lahko domov",
+					itemsExist: "Zajček ni prišel do korenja",
+					itemsDontExist: "Zajček se je najedel",
 				},
 	
 			},
@@ -49,7 +49,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 30,
+		maxInstructions: 0,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -58,6 +58,7 @@ function initTask(subTask) {
 					"forward",
 					"turn",
 					"turnAround",
+					
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},
@@ -75,7 +76,7 @@ function initTask(subTask) {
 		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "coin", value: 0}, {}, exist=false).checkReachGreenArea(context, lastTurn)},
 		computeGrade: robotGradeFunctions.allOrNothing,
 			
-		border: 0.05,
+		border: 0.005,
 		backgroundColour: "white",
 		backgroundTile: false,
 		borderColour: "grey",
@@ -84,9 +85,12 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["dog_all_8_sides.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
-			coin1: {num:3, img:["star.png"],zOrder: 2, category:{"coin":true}},
-			coin :{ img:["miha_all_8_sides.png"],side: 60, nbStates: 8,zOrder: 8, category:{"coin":true}},
+			robot0: { img: ["girl_all_8_sides.png"], side: 70, nbStates: 8, zOrder: 8, category: {'robot': true}, },
+			coin0: {num:2, img:["egg.png"],zOrder: 2, category:{'transportable':true}},
+			coin1: {num:3, img:["egg_blue.png"],zOrder: 2, category:{'transportable':true}},
+			coin2: {num:4, img:["egg_red.png"],zOrder: 2, category:{'transportable':true}},
+			
+		
 		}, 
 		ignoreInvalidMoves: false,
 	};
@@ -95,23 +99,43 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1],//15x11
 					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
+					[2, 1, 1, 3, 1, 2, 1, 1],
+					[1, 1, 1, 1, 4, 1, 1, 4],
+					[1, 1, 2, 1, 1, 2, 1, 1],
+					[1, 3, 1, 1, 1, 1, 4, 3],
+					[1, 1, 4, 1, 3, 1, 1, 1],
+					[1, 2, 1, 1, 1, 3, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1]
 					
 					
 				],
 				initItems: [
-					{ row: 3, col: 1, dir: 0, type: "robot0" },
+					{ row: 6, col: 0, dir: 0, type: "robot0" },
 					
 					
 				],
 			},
+			{
+				tiles: [
+					[1, 1, 3, 1, 1, 1, 1, 1],
+					[1, 2, 1, 1, 1, 3, 1, 2],
+					[4, 1, 1, 3, 1, 1, 1, 2],
+					[1, 1, 3, 1, 1, 1, 1, 1],
+					[1, 1, 1, 4, 1, 1, 4, 1],
+					[2, 1, 1, 1, 2, 1, 1, 1],
+					[1, 1, 4, 1, 1, 1, 3, 1],
+					[1, 1, 1, 1, 2, 1, 1, 1]
+					
+					
+				],
+				initItems: [
+					{ row: 7, col: 0, dir: 0, type: "robot0" },
+					
+					
+				],
+			},
+			
 		],
 	};
 

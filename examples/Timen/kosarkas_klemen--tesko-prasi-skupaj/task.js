@@ -49,7 +49,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 0,
+		maxInstructions: 30,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -84,10 +84,21 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot: { img: ["pisek_all_8_sides.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
-			coin1: { num:3, img:["star.png"],zOrder: 2, category:{"coin":true}},
-			coin2: { num:4,img:["miha_all_8_sides.png"],side: 60, nbStates: 8,zOrder: 8, category:{"coin":true}},
-		}, 
+			robot0: { img: ["dog_all_8_sides.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
+			coin2: {num:3, img:["goal.png"],side: 60, nbStates: 8,zOrder: 8, category:{"coin":true}},
+			coin1: {num:4, img:[""],side: 60, nbStates: 8,zOrder: 8, category:{"coin":true}},
+
+			//======================================
+
+			button11: { img: ["white"],  zOrder: 2, category: {'button':true}, },
+			door11: { img: ["white","4_cones.png"], zOrder: 2, category: [{'obstacle':false}, {}], },
+
+			button12: { img: ["white"],  zOrder: 2, category: {'button':true}, },
+			door12: { img: ["white","4_cones.png"],  zOrder: 2, category: [{'obstacle':false}, {}], },
+
+			
+		},
+
 		ignoreInvalidMoves: false,
 	};
 
@@ -95,73 +106,43 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 3, 4, 3, 3, 4, 1, 1, 1],
-					[1, 4, 4, 3, 4, 3, 1, 1, 1],
-					[1, 4, 4, 4, 3, 4, 1, 1, 1],
-					[1, 3, 3, 4, 3, 3, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 4, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 4, 1, 1, 1, 3],
+					[1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 4, 1, 1, 1, 1],
+					[1, 4, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1],
 					
-										
+					
 				],
 				initItems: [
-					{ row: 1, col: 0, dir: 0, type: "robot" },
-					
-					
-				],
-			},
-			{
-				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 3, 4, 4, 4, 4, 1, 1, 1],
-					[1, 4, 3, 3, 4, 3, 1, 1, 1],
-					[1, 4, 3, 4, 3, 4, 1, 1, 1],
-					[1, 3, 4, 3, 3, 3, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					
-										
-				],
-				initItems: [
-					{ row: 1, col: 0, dir: 0, type: "robot" },
-					
-					
-				],
-			},
-			{
-				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 3, 3, 3, 4, 4, 1, 1, 1],
-					[1, 4, 3, 3, 3, 3, 1, 1, 1],
-					[1, 4, 3, 4, 4, 4, 1, 1, 1],
-					[1, 3, 3, 4, 3, 3, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					
-										
-				],
-				initItems: [
-					{ row: 1, col: 0, dir: 0, type: "robot" },
-					
-					
-				],
-			},
-			{
-				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 3, 3, 3, 3, 4, 1, 1, 1],
-					[1, 4, 4, 4, 4, 4, 1, 1, 1],
-					[1, 3, 3, 3, 3, 3, 1, 1, 1],
-					[1, 3, 4, 4, 4, 3, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1],
-					
-										
-				],
-				initItems: [
-					{ row: 1, col: 0, dir: 0, type: "robot" },
-					
+					{ row: 3, col: 0, dir: 0, type: "robot0" },
+
+					{ row: 1, col: 1, id: 1, value:1, type:"door11" },
+					{ row: 1, col: 1, id: 2, value: 1, type: "door12" },
+
+					{ row: 0, col: 0, id: 1, value: 1, type: "button11" },
+					{ row: 2, col: 0, id: 2, value: 1, type: "button12" },
+						//==========
+					{ row: 3, col: 3, id: 3, value:1, type:"door11" },
+					{ row: 3, col: 3, id: 4, value: 1, type: "door12" },
+
+					{ row: 2, col: 2, id: 3, value: 1, type: "button11" },
+					{ row: 4, col: 2, id: 4, value: 1, type: "button12" },
+						//=========
+					{ row: 5, col: 3, id: 3, value:1, type:"door11" },
+					{ row: 5, col: 3, id: 4, value: 1, type: "door12" },
+
+					{ row: 4, col: 2, id: 3, value: 1, type: "button11" },
+					{ row: 6, col: 2, id: 4, value: 1, type: "button12" },
+					//=====
+					{ row: 6, col: 1, id: 3, value:1, type:"door11" },
+					{ row: 6, col: 1, id: 4, value: 1, type: "door12" },
+
+					{ row: 5, col: 0, id: 3, value: 1, type: "button11" },
+					{ row: 7, col: 0, id: 4, value: 1, type: "button12" },
 					
 				],
 			},
