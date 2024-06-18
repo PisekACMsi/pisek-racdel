@@ -48,7 +48,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 12,
+		maxInstructions: 6,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -96,13 +96,20 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 2, 2, 2, 1, 2, 2, 1, 1, 1],
-					[1, 3, 2, 3, 3, 2, 3, 1, 2, 3],
-					[1, 3, 1, 3, 3, 1, 3, 1, 1, 3],
-					[2, 1, 1, 1, 2, 1, 2, 1, 2, 2],	
+					[2, 1, 1, 2, 1],
+					[2, 2, 3, 1, 1],
+					[1, 1, 1, 1, 2],
+					[1, 2, 3, 1, 2],
+					[2, 2, 1, 1, 1],
+					[1, 1, 3, 1, 2],
+					[1, 2, 1, 1, 2],
+					[2, 1, 1, 2, 2],
+
+					
+						
 				],
 				initItems: [
-					{ row: 2, col: 0, dir: 0, type: "robot0" },
+					{ row: 0, col: 1, dir: 0, type: "robot0" },
 
 				],
 			},
