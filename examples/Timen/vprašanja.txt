@@ -30,6 +30,15 @@ nbStates upliva na pobiranje kako točno
 
 ACencelj_46Z_PikapolonicaInSkrivnoStevilo.docx
 
+kako se dela z delčki kje najdemo imena kako dodajamo posamezne itd....======================================
+
+
+paint1: { num: 11, zOrder: 3, id:1, colour: ['#ffff00','#ff0000'] },
+			paint2: { num: 12, zOrder: 3, id:2, colour: ['#3333ff','#ffff00'] },
+			paint3: { num: 13, zOrder: 3, id:3, colour: ['#ff0000','#006600'] },
+			paint4: { num: 14, zOrder: 3, id:4, colour: ['#006600','#3333ff'] },
+
+delček za en korak naprej(da programi ne štejejo za dva), posebi poteze pick up in kateri so to pol(coin....)
 
 
 
