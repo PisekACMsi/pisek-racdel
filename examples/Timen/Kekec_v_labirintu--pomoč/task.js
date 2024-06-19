@@ -14,6 +14,10 @@ function initTask(subTask) {
 		// but the architecture needs to be the same as: "localLanguageStrings"
 		languageStrings: {
 			sl: {
+				label:{sensorNumber:"številka spodaj"},//languegae za novi delček
+				code:{sensorNumber:"stevilkaSpodaj"},
+				description:{sensorNumber:"Vrne številko na polju"},
+
 				startingBlockName: "Program",	
 				categories: {				
 				   actions: "Gibanje",
@@ -30,6 +34,23 @@ function initTask(subTask) {
 				},
 			},
 		},
+
+		localBlocks: function(context, strings, infos){
+		
+			var customBlocks = {	// don't attach it to context!! just return it
+				robot: {
+					tools: [
+						{  	name: "sensorNumber", 
+							yieldsValue: true,
+							handler: (callback) => { context.robot.sensorValue("under", "number","value" ,callback) },
+							
+						},
+					],
+				},
+			};
+			return customBlocks;
+		},
+
 
 		hideControls: {					//gumbi na urejevalniku
 			restart: false,
@@ -60,6 +81,8 @@ function initTask(subTask) {
 					"turnAround",
 					"changeRobot",
 					"transport",
+					"sensorValue",
+					"sensorNumber",
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},
@@ -77,7 +100,7 @@ function initTask(subTask) {
 		},					
 		checkEndEveryTurn: false,		                              //kako pogosto preverjamo uspešnost rešitve
 		checkEndCondition:  (context, lastTurn) => {                  // funkcija za preverjanje vspešnosti
-			robotEndConditions.checkItemExistence(context, lastTurn, {type: "coin"}, {}, exist=false) // vse možnosti najdemo v blocklyRobot_lib.js(2069) var robotEndConditions
+			robotEndConditions.checkItemExistence(context, lastTurn, {category:"coin"}, {}, exist=false) // vse možnosti najdemo v blocklyRobot_lib.js(2069) var robotEndConditions
 			//za kombinirane uporabljamo funvkije primer: na datoteki kombinacija \\ Več pogojev
 		},
 		computeGrade: robotGradeFunctions.allOrNothing,
@@ -102,19 +125,21 @@ function initTask(subTask) {
 			obstacle2: { num: 3, img: "Mojca.png",offsetY: -20, zOrder: 4, category: {'obstacle': true}},
 			//zakaj roze ne delajo
 			roza1:{num: 4, img:"Roza1.png",zOrder: 4},
-			roza1:{num: 5, img:"Roza2.png",zOrder: 4},
-			roza1:{num: 6, img:"Roza3.png",zOrder: 4},
-			roza1:{num: 7, img:"Roza4.png",zOrder: 4},
-			roza1:{num: 8, img:"Roza5.png",zOrder: 4},
+			roza2:{num: 5, img:"Roza2.png",zOrder: 4},
+			roza3:{num: 6, img:"Roza3.png",zOrder: 4},
+			roza4:{num: 7, img:"Roza4.png",zOrder: 4},
+			roza5:{num: 8, img:"Roza5.png",zOrder: 4},
 			strupenaroza1:{num: 9, img:"StrupenaRoza1.png",zOrder: 4},
-			strupenaroza1:{num: 10, img:"StrupenaRoza2.png",zOrder: 4},
-			strupenaroza1:{num: 11, img:"StrupenaRoza3.png",zOrder: 4},
+			strupenaroza2:{num: 10, img:"StrupenaRoza2.png",zOrder: 4},
+			strupenaroza3:{num: 11, img:"StrupenaRoza3.png",zOrder: 4},
 			//button: { img: ["button_unpressed.png", "button_pressed.png"], zOrder: 2, category: {'button':true} },
 			//door: { img: ["orange_floor.png", "grass4.png"], zOrder: 2, category: [{'obstacle':true}, {'obstacle':false}]},
 			//goal: { num: 3, side: 80, img:"flag2.png" },
 			//marble: {num: 4, img: ["ball.png"], zOrder: 1, category: {'transportable':true},transOrder: 0},
 			//hole: {num: 5, img: ["goal.png"], zOrder: 1, },
-			coin: {num:15, img:["hisa.png"],zOrder: 1, category:{"coin":true}}
+			coin: {num:15, img:["hisa.png"],zOrder: 1, category:{"coin":true}},
+
+			number:{category:{"number":true}},
 		}, 
 		ignoreInvalidMoves: false,
 	};
@@ -137,7 +162,7 @@ function initTask(subTask) {
 				],
 				initItems: [ //direktno dodamo elemente
 					{ row: 7, col: 1, dir: 0, type: "robot0" },
-				
+					{row:8, col:1, type:"number",value:9}
 				
 				],
 			},
