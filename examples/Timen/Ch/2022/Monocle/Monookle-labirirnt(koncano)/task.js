@@ -19,8 +19,7 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Tabornik ni pobral vseh jajčkov. ",
-					itemsDontExist: "Tabornik je pobral vsa jajčka. ",
+					itemsExist: "Pišček ni pobral vseh jajčk",
 				},
 	
 			},
@@ -49,7 +48,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 6,
+		maxInstructions: 12,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -58,15 +57,13 @@ function initTask(subTask) {
 					"forward",
 					"turn",     
 					//"turnAround",
-					"transport",
-					"sensorBool"
 					
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops","functions","logic"],
+				wholeCategories: ["loops","functions"],//hočem le opcijo premKNI SE NE PREMKANI SE ZA=========================================================	
 				singleBlocks: [],
 				excludedBlocks: [],
 			},
@@ -75,21 +72,21 @@ function initTask(subTask) {
 			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"></block><additional>{}</additional></xml>',
 		},					
 		checkEndEveryTurn: false,		//kako pogosto preverjamo uspešnost rešitve
-		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "transportable", value: 0}, {}, exist=false).checkReachGreenArea(context, lastTurn)},
+		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "coin", value: 0}, {}, exist=false).checkReachGreenArea(context, lastTurn)},
 		computeGrade: robotGradeFunctions.allOrNothing,
 			
 		border: 0.05,
-		backgroundColour: "grey",
-		backgroundTile: false,
-		borderColour: "lightgrey",
+		backgroundColour: "green",
+		backgroundTile: "grass3.png",
+		borderColour: "darkgreen",
 
 		cellSide: 80,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["tabornik_all_8_sides.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
-			obstacle: { num: 2, img:["tree_transparent.png"], zOrder: 1, category: {'obstacle': true}},
-			coin: {num:3, img:["egg.png"],zOrder: 8, category:{'transportable':true}},
+			robot0: { img: ["pisek_all_8_sides.png"], side: 75, nbStates: 9, zOrder: 8, category: {'robot': true}, },
+			obstacle: { num: 2, img:["mango_tree_transparent.png"], zOrder: 1, category: {'obstacle': true}},
+			coin: {num:3, img:["egg.png"],zOrder: 8, category:{"coin":true}},
 		},
 
 		ignoreInvalidMoves: false,
@@ -99,25 +96,22 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 3, 1, 1],
-					[1, 1, 1, 2, 2, 1, 1, 1, 1, 2],
-					[1, 1, 1, 1, 1, 2, 1, 1, 1, 1],
-					[1, 3, 1, 1, 1, 1, 3, 1, 1, 2],
-					[1, 1, 1, 2, 1, 1, 1, 1, 1, 1],
-					[2, 1, 1, 1, 3, 1, 1, 1, 1, 3],
-					[1, 1, 1, 2, 1, 2, 1, 1, 1, 1],
-					[1, 3, 1, 1, 1, 1, 1, 1, 1, 3],
-					[1, 1, 1, 1, 3, 1, 1, 3, 1, 1],
-						
+					[2, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[2, 2, 2, 1, 2, 1, 1, 1, 2, 2],
+					[2, 3, 2, 1, 2, 2, 1, 1, 1, 2],
+					[2, 1, 2, 1, 1, 1, 1, 1, 2, 1],
+					[1, 1, 1, 2, 2, 1, 2, 1, 2, 1],
+					[2, 1, 2, 2, 1, 1, 2, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 2, 1],
+					[2, 2, 1, 2, 1, 2, 1, 1, 2, 1],
 					
+						
 				],
 				initItems: [
-					{ row: 1, col: 1, dir: 0, type: "robot0" },
+					{ row: 0, col: 1, dir: 0, type: "robot0" },
 
 				],
 			},
-			
 		],
 	};
 

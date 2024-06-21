@@ -14,22 +14,58 @@ function initTask(subTask) {
 		// but the architecture needs to be the same as: "localLanguageStrings"
 		languageStrings: {
 			sl: {
+				
+				label:{sensorBool:"Jajcek spodaj"},//languegae za novi delček
+				code:{sensorBool:"jajcekSpodaj"},
+				description:{sensorBool:"Prepozna ali se nahajamo na jajčku"},
+
+				label:{transport:"Poberi Jajček"},//languegae za novi delček
+				code:{transport:"poberi"},
+				description:{transport:"povere jajcek"},
+
 				startingBlockName: "Program",	
 				categories: {				
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Zajček ni prišel do korenja",
-					itemsDontExist: "Zajček se je najedel",
+					itemsExist: "Maša ni pobrala vseh jajčkov",
+					itemsDontExist: "Maša je pobrala vsa jajčka",
 				},
 	
 			},
 		},
 
-		localBlocks: function(context, strings){
-			var customBlocks = {};
+		localBlocks: function(context, strings, infos){
+		
+			var customBlocks = {	// don't attach it to context!! just return it
+				robot: {
+					tools: [
+						{  	name: "sensorBool", 
+							yieldsValue: true,
+							handler: (callback) => { context.robot.sensorBool("under", "transportable", "category" ,callback) },
+						},
+						{  name: "transport",
+							blocklyJson: {
+							   "args0": [
+								  {
+									 "type": "field_dropdown", 
+									 "name": "PARAM_0", 
+									 "options": [
+										[strings["options"]["pick"], "pick"],
+										
+									 ],
+									 "check":"String",
+								  },
+							   ],
+							},
+						 },
+					],
+				},
+			};
 			return customBlocks;
 		},
+
+		
 
 		hideControls: {					//gumbi na urejevalniku
 			restart: false,
@@ -54,26 +90,31 @@ function initTask(subTask) {
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					"move",
-					"forward",
+					//"move",
+					//"forward",
+					"forwardSimple",
 					"turn",
 					"turnAround",
+					
+					"sensorBool",
+					//"Poberi",
+					"transport",
 					
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops"],
+				wholeCategories: ["loops","logic"],
 				singleBlocks: [],
 				excludedBlocks: [],
 			},
 		},
 		startingExample: { //vnaprej podana koda ukazov
-			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="move" id="MbM_//]ZWK/@+4!}{tp!"><field name="PARAM_0">E</field><value name="PARAM_1"><shadow type="math_number" id="iP0c0F0+dX!Z;Pn.etLj"><field name="NUM">1</field></shadow></value><next><block type="controls_repeat_ext" id="k*L/LO+iDjO0A@Bp,/J~"><value name="TIMES"><shadow type="math_number" id=",xJxwac#Ir/zb9K9e3Fw"><field name="NUM">2</field></shadow></value><statement name="DO"><block type="move" id="w7H+#qrT3)qQy]2_1T_m"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="f7gS/X2P[[V`1_;Hwqe1"><field name="NUM">1</field></shadow></value></block></statement><next><block type="controls_repeat_ext" id="=4z--0}Kb6=r(x08u9_{"><value name="TIMES"><shadow type="math_number" id="Vpp2hmADGIK8.mo()tj0"><field name="NUM">2</field></shadow></value><statement name="DO"><block type="controls_repeat_ext" id=".]b@wUApPwxFX{W#zKbJ"><value name="TIMES"><shadow type="math_number" id="m5;=R}7:x0v~mYF4lh+x"><field name="NUM">2</field></shadow></value><statement name="DO"><block type="move" id="n9wiOYO;/AdohYa7hn`7"><field name="PARAM_0">E</field><value name="PARAM_1"><shadow type="math_number" id="-LP!.l|(QOT*vd2!(Pa;"><field name="NUM">1</field></shadow></value></block></statement><next><block type="move" id="XIZ!!ml|m[CDUI9bgUye"><field name="PARAM_0">N</field><value name="PARAM_1"><shadow type="math_number" id="]x!kG*:*Vv!`_5!]X5m3"><field name="NUM">1</field></shadow></value><next><block type="controls_repeat_ext" id="j7-xSn.D(zj4B8m#AyP5"><value name="TIMES"><shadow type="math_number" id="SqyzOVR@0H{bEf4](/F["><field name="NUM">2</field></shadow></value><statement name="DO"><block type="move" id=":mkm{iH89T}Fj~Hy)Hd2"><field name="PARAM_0">E</field><value name="PARAM_1"><shadow type="math_number" id="B@v1fHgm~4ri!/SFzy)z"><field name="NUM">1</field></shadow></value></block></statement><next><block type="controls_repeat_ext" id=":~;z[~y[]H*rt2k{OMZ#"><value name="TIMES"><shadow type="math_number" id="B}1}FD92H]2]`#o:K[eY"><field name="NUM">4</field></shadow></value><statement name="DO"><block type="move" id="MoAbL}tkJ)xcAC26}Pnz"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="wr.:iWGnm#(WRm{m~6Zw"><field name="NUM">1</field></shadow></value></block></statement></block></next></block></next></block></next></block></statement><next><block type="controls_repeat_ext" id="1)A[W_r8NN::qGS.c*rX"><value name="TIMES"><shadow type="math_number" id="~P6073;K7d;,!rr;9b=n"><field name="NUM">3</field></shadow></value><statement name="DO"><block type="move" id="DbFL;9pWX#cz01~f)p{8"><field name="PARAM_0">E</field><value name="PARAM_1"><shadow type="math_number" id="cP0:3=ouTgj@A:Vw;Vz?"><field name="NUM">1</field></shadow></value></block></statement></block></next></block></next></block></next></block></next></block><additional>{}</additional></xml>',
+			blockly:' <xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="controls_repeat_ext" id="C?L2)Pi=W@77plT}!B.@"><value name="TIMES"><shadow type="math_number" id="J8`SCQhgK-9jpEZn}/@a"><field name="NUM">6</field></shadow></value><statement name="DO"><block type="controls_repeat_ext" id="g}HJ+bYmmt98r8qo(;~c"><value name="TIMES"><shadow type="math_number" id="xcLrc!f*haY?Venw6{S8"><field name="NUM">7</field></shadow></value><statement name="DO"><block type="forwardSimple" id="Gg84g*Tx-w(236o2Clee"><next><block type="controls_if" id="*Kb57sM=MjB2(A51NbXc"><value name="IF0"><block type="sensorBool" id="3_stRps5n8o`@O|O|A9,"></block></value><statement name="DO0"><block type="transport" id="cd-V.*(/akFCn|l-+1k5"><field name="PARAM_0">pick</field></block></statement></block></next></block></statement><next><block type="turnAround" id="Ryl[C#zzu}~]A7@9p[wE"><next><block type="controls_repeat_ext" id="cv`iB)4VQPc(nP{asjA:"><value name="TIMES"><shadow type="math_number" id="j]B*A77D+9Eq)!,~m4tH"><field name="NUM">7</field></shadow></value><statement name="DO"><block type="forwardSimple" id="rZO8SOL{1JDa2u3=yn.["></block></statement><next><block type="turn" id="9M@ccdr!_?vmJe7k0MBp"><field name="PARAM_0">2</field><next><block type="forwardSimple" id="l@PidCakMVk|=!XM7C#Y"><next><block type="turn" id="CONWrgvt)vpy1g?`GiE{"><field name="PARAM_0">2</field></block></next></block></next></block></next></block></next></block></next></block></statement></block></next></block><additional>{}</additional></xml>',
 		},					
 		checkEndEveryTurn: false,		//kako pogosto preverjamo uspešnost rešitve
-		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "coin", value: 0}, {}, exist=false).checkReachGreenArea(context, lastTurn)},
+		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "transportable", value: 0}, {}, exist=false).checkReachGreenArea(context, lastTurn)},
 		computeGrade: robotGradeFunctions.allOrNothing,
 			
 		border: 0.005,
