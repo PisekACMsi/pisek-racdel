@@ -23,6 +23,10 @@ function initTask(subTask) {
 				code:{sensorBool2:"oviraDesno"},
 				description:{sensorBool2:"Preveri ali je ovira desno"},
 
+				label:{sensorBool3:"ovira levo"},//languegae za novi delček
+				code:{sensorBool3:"oviraLevo"},
+				description:{sensorBool3:"Preveri ali je ovira levo"},
+
 				startingBlockName: "Program",	
 				categories: {				
 				   actions: "Gibanje",
@@ -48,6 +52,10 @@ function initTask(subTask) {
 						{  	name: "sensorBool2", 
 							yieldsValue: true,
 							handler: (callback) => { context.robot.sensorBool("2", "obstacle", "category" ,callback) },
+						},
+						{  	name: "sensorBool3", 
+							yieldsValue: true,
+							handler: (callback) => { context.robot.sensorBool("-2", "obstacle", "category" ,callback) },
 						},
 						
 					],

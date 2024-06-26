@@ -49,7 +49,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 10,
+		maxInstructions: 19,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -57,7 +57,7 @@ function initTask(subTask) {
 					//"move",
 					"forwardSimple",
 					"turn",     //samo desno
-					"turnAround",
+					//"turnAround",
 					
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
@@ -65,7 +65,7 @@ function initTask(subTask) {
 			standardBlocks: {
 				includeAll: false,
 				wholeCategories: [],
-				singleBlocks: [],
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},
@@ -97,17 +97,21 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1],
-					[1, 1, 3, 1, 1],
-					[1, 1, 1, 1, 1],
-					[1, 1, 1, 3, 1],
-					[1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 3, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 3, 1, 1, 1, 3, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 3, 1, 1, 3, 1, 1, 1, 3, 1],
+					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					
 						
 					
 				],
 				initItems: [
-					{ row: 3, col: 0, dir: 0, type: "robot0" },
+					{ row: 1, col: 0, dir: 0, type: "robot0" },
 
 				],
 			},

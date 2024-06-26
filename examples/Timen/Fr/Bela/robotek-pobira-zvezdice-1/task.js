@@ -19,7 +19,8 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Robotek ni prišel domov",
+					itemsExist: "Robotek ni pobral vseh zvezdic",
+					itemsDontExist: "Robotek je pobral vse zvezdice",
 				},
 	
 			},
@@ -54,7 +55,7 @@ function initTask(subTask) {
 			generatedBlocks: {
 				robot:  [
 					//"move",
-					"forward",
+					"forwardSimple",
 					"turn",     //samo desno
 					//"turnAround",
 					

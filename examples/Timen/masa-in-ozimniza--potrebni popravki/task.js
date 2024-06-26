@@ -15,13 +15,13 @@ function initTask(subTask) {
 		languageStrings: {
 			sl: {
 				
-				label:{sensorBool:"Jajcek spodaj"},//languegae za novi delček
-				code:{sensorBool:"jajcekSpodaj"},
-				description:{sensorBool:"Prepozna ali se nahajamo na jajčku"},
+				label:{sensorBool1:"Jajcek spodaj"},//languegae za novi delček
+				code:{sensorBool1:"jajcekSpodaj"},
+				description:{sensorBool1:"Prepozna ali se nahajamo na jajčku"},
 
-				label:{transport:"Poberi Jajček"},//languegae za novi delček
-				code:{transport:"poberi"},
-				description:{transport:"povere jajcek"},
+				label:{transport1:"Poberi Jajček"},//languegae za novi delček
+				code:{transport1:"poberi"},
+				description:{transport1:"povere jajcek"},
 
 				startingBlockName: "Program",	
 				categories: {				
@@ -40,11 +40,11 @@ function initTask(subTask) {
 			var customBlocks = {	// don't attach it to context!! just return it
 				robot: {
 					tools: [
-						{  	name: "sensorBool", 
+						{  	name: "sensorBool1", 
 							yieldsValue: true,
 							handler: (callback) => { context.robot.sensorBool("under", "transportable", "category" ,callback) },
 						},
-						{  name: "transport",
+						{  name: "transport1",
 							blocklyJson: {
 							   "args0": [
 								  {
@@ -96,9 +96,9 @@ function initTask(subTask) {
 					"turn",
 					"turnAround",
 					
-					"sensorBool",
+					"sensorBool1",
 					//"Poberi",
-					"transport",
+					"transport1",
 					
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
