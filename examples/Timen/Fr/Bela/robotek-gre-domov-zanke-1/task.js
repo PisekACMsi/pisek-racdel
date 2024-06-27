@@ -20,6 +20,7 @@ function initTask(subTask) {
 				},
 				messages:{
 					itemsExist: "Robotek ni prišel domov",
+					itemsDontExist: "Robotek je doma",
 				},
 	
 			},
@@ -53,9 +54,9 @@ function initTask(subTask) {
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					"move",
-					//"forward",		//vse smeri + zanke
-					//"turn",     //samo desno
+					//"moveSimple",
+					"forwardSimple",		//vse smeri + zanke
+					"turn",     //samo desno
 					//"turnAround",
 					
 				],
@@ -63,8 +64,8 @@ function initTask(subTask) {
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops"],
-				singleBlocks: [],
+				wholeCategories: [],
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},
@@ -80,7 +81,7 @@ function initTask(subTask) {
 		backgroundTile: false,
 		borderColour: "grey",
 
-		cellSide: 80,	
+		cellSide: 60,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {

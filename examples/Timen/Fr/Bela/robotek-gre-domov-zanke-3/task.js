@@ -20,6 +20,7 @@ function initTask(subTask) {
 				},
 				messages:{
 					itemsExist: "Robotek ni prišel domov",
+					itemsDontxist: "Robotek je doma",
 				},
 	
 			},
@@ -48,14 +49,14 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 15,
+		maxInstructions: 19,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					"move",
-					//"forward",		//vse smeri + zanke
-					//"turn",     //samo desno
+					//"move",
+					"forwardSimple",		//vse smeri + zanke
+					"turn",     //samo desno
 					//"turnAround",
 					
 				],
@@ -63,8 +64,8 @@ function initTask(subTask) {
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops"],
-				singleBlocks: [],
+				wholeCategories: [],
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},
@@ -80,7 +81,7 @@ function initTask(subTask) {
 		backgroundTile: false,
 		borderColour: "black",
 
-		cellSide: 80,	
+		cellSide: 60,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
@@ -109,7 +110,7 @@ function initTask(subTask) {
 					
 				],
 				initItems: [
-					{ row: 8, col: 1, dir: 0, type: "robot0" },
+					{ row: 8, col: 1, dir: 6, type: "robot0" },
 
 				],
 			},

@@ -49,7 +49,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 14,
+		maxInstructions: 11,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -65,8 +65,8 @@ function initTask(subTask) {
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops"],//hočem le opcijo premKNI SE NE PREMKANI SE ZA=========================================================	
-				singleBlocks: [],
+				wholeCategories: [],//hočem le opcijo premKNI SE NE PREMKANI SE ZA=========================================================	
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},

@@ -65,8 +65,8 @@ function initTask(subTask) {
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops","functions"],//hočem le opcijo premKNI SE NE PREMKANI SE ZA=========================================================	
-				singleBlocks: [],
+				wholeCategories: [],//hočem le opcijo premKNI SE NE PREMKANI SE ZA=========================================================	
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},

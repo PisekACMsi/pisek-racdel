@@ -56,7 +56,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 30,
+		maxInstructions: 14,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -71,8 +71,8 @@ function initTask(subTask) {
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops"],
-				singleBlocks: [],
+				wholeCategories: [],
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},

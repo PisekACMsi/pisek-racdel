@@ -19,8 +19,8 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Robotek ni našel kapsule. ",
-					itemsDontExist: "Robotek je našel kapsulo. ",
+					itemsExist: "Robotek ni našel zaklada. ",
+					itemsDontExist: "Robotek je našel zaklad. ",
 				},
 				errors:{
 					obstacle: "Pazi, kamen!",
