@@ -14,6 +14,10 @@ function initTask(subTask) {
 		// but the architecture needs to be the same as: "localLanguageStrings"
 		languageStrings: {
 			sl: {
+				label:{transport:"Pojej ribo"},//languegae za novi delček
+				code:{transport:"PojejRibo"},
+				description:{transport:"Poje ribo na kateri stoji. "},
+
 				startingBlockName: "Program",	
 				categories: {				
 				   actions: "Gibanje",
@@ -29,7 +33,15 @@ function initTask(subTask) {
 		},
 
 		localBlocks: function(context, strings){
-			var customBlocks = {};
+			var customBlocks = {robot: {
+				tools: [
+					{  	name: "transport", 
+						handler: (callback) => { context.robot.transport("pick" ,callback) },
+						"check":"String",
+					
+					},
+				],
+			},};
 			return customBlocks;
 		},
 
@@ -56,46 +68,50 @@ function initTask(subTask) {
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					"move",
-					"forward",
+					//"move",
+					"forwardSimple",
 					"turn",
-					"turnAround",
+					//"turnAround",
+					"transport"
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops"],
-				singleBlocks: [],
+				wholeCategories: [],
+				singleBlocks: ['controls_repeat_ext'],
 				excludedBlocks: [],
 			},
 		},
 		startingExample: { //vnaprej podana koda ukazov
-			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="move" id="MbM_//]ZWK/@+4!}{tp!"><field name="PARAM_0">W</field><value name="PARAM_1"><shadow type="math_number" id="iP0c0F0+dX!Z;Pn.etLj"><field name="NUM">5</field></shadow></value><next><block type="move" id="_kaJD:UP#)5)vZqPd]!-"><field name="PARAM_0">S</field><value name="PARAM_1"><shadow type="math_number" id="PjVch_|saW)#,UQUOLJN"><field name="NUM">4</field></shadow></value><next><block type="move" id="5ZnXRO;M2~qH,F5/rp(#"><field name="PARAM_0">W</field><value name="PARAM_1"><shadow type="math_number" id=")eGaY5#7MhjeTll(1JIu"><field name="NUM">2</field></shadow></value><next><block type="move" id="SHn*CFTJxpy8(yq41On+"><field name="PARAM_0">N</field><value name="PARAM_1"><shadow type="math_number" id="t:KcCHdRRRh,IG;sVu0U"><field name="NUM">4</field></shadow></value></block></next></block></next></block></next></block></next></block><additional>{}</additional></xml>',
+			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"></block><additional>{}</additional></xml>',
 		},					
 		checkEndEveryTurn: false,		//kako pogosto preverjamo uspešnost rešitve
 		checkEndCondition:  (context, lastTurn) => { 
 			robotEndConditions.checkCombiner(context, lastTurn, [
-				(context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "coin"}, {}, exist=false) }, 
+				(context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "transportable"}, {}, exist=false) }, 
 				(context, lastTurn) => { robotEndConditions.checkItemCoincidence(context, lastTurn, {type: "robot0"}, {category: "konec"}) },
 			])
 		},
 			
 		border: 0.05,
 		backgroundColour: "white",
-		backgroundTile: false,
+		backgroundTile: "grass.png",
 		borderColour: "grey",
 
-		cellSide: 80,	
+		cellSide: 60,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["pisek_all_8_sides.png"], side: 70, nbStates: 9, offsetX: 2, zOrder: 8, category: {'robot': true}, },
-			coin: {num:3, img:["egg.png"],zOrder: 2, category:{"coin":true}},
-			coin2: {num:4, img:["nest_original.png"], nbStates: 8,zOrder: 8, category:{"konec":true}},
+			robot0: { img: ["posast_8_strani.png"], side: 60, nbStates: 9, offsetX: 2, zOrder: 6, category: {'robot': true}, },
+
+			coin: {num:3, img:["fish_fresh.png"],zOrder: 3, category:{"transportable":true}},
+			rib:{ img:["fish_eaten.png"],zOrder: 2, category:{"rib":true}},
+
+			coin2: {num:4, img:["yellow_house.png"],zOrder: 8, category:{"konec":true}},
 			//holeR: { num: 41, img: "nest_red.png", zOrder: 6, category: {'hole':true}},
 			// kako naj preverim pravilno zaporedje pobirnaja stvari===================================================================
-			obstacle: { num: 2, img: "rock_formation.png",  zOrder: 8, category: {'obstacle':true}, },
+			obstacle: { num: 2, img: "tree_with_grass.png",  zOrder: 8, category: {'obstacle':true}, },
 		
 		}, 
 		ignoreInvalidMoves: false,
@@ -115,8 +131,8 @@ function initTask(subTask) {
 					[1, 1, 1, 1, 1, 1, 1, 1],
 				],
 				initItems: [
-					{ row: 0, col: 7, dir: 0, type: "robot0" },
-					
+					{ row: 0, col: 7, dir: 4, type: "robot0" },
+					{row:0,col:4,type:"rib"}
 					
 				],
 			},

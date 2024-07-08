@@ -81,11 +81,11 @@ function initTask(subTask) {
 		backgroundTile: false,
 		borderColour: "grey",
 
-		cellSide: 80,	
+		cellSide: 70,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["green_robot2.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["green_robot2.png"], side: 70, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			//obstacle: { num: 2, img:["dirt.png"], zOrder: 1, category: {'obstacle': true}},
 			coin: {num:3, img:["star.png"],zOrder: 8, category:{"coin":true}},
 		},

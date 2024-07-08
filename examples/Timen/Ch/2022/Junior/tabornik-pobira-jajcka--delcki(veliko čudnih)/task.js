@@ -14,6 +14,19 @@ function initTask(subTask) {
 		// but the architecture needs to be the same as: "localLanguageStrings"
 		languageStrings: {
 			sl: {
+				label:{
+					sensorBool3:"Ovira spredaj",
+					sensorBool4:"Jajček spodaj",
+				},
+				code:{
+					sensorBool3: "OviraSpredaj",
+    				sensorBool4: "JajčekSpodaj"
+				},
+				description:{
+					sensorBool3: "Pove ali je pred nami ovira. ",
+    				sensorBool4: "Pove ali je pod nami jajček. "
+				},
+
 				startingBlockName: "Program",	
 				categories: {				
 				   actions: "Gibanje",
@@ -27,7 +40,22 @@ function initTask(subTask) {
 		},
 
 		localBlocks: function(context, strings){
-			var customBlocks = {};
+			var customBlocks = {
+				robot:{
+					tools:[
+						{
+							name: "sensorBool3",
+							yieldsValue:true,
+							handler: (callback)=>{context.robot.sensorBool("0","obstacle","category",callback)},
+						},
+						{
+							name: "sensorBool4",
+							yieldsValue:true,
+							handler: (callback)=>{context.robot.sensorBool("under","transportable","category",callback)},
+						},
+					]
+				},
+			};
 			return customBlocks;
 		},
 
@@ -49,25 +77,27 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 6,
+		maxInstructions: 7,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
 					//"move",
-					"forward",
+					"forwardSimple",
 					"turn",     
 					//"turnAround",
 					"transport",
-					"sensorBool"
+					//"sensorBool",
+					//"sensorBool3",
+					"sensorBool4",
 					
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},
 			standardBlocks: {
 				includeAll: false,
-				wholeCategories: ["loops","functions","logic"],
-				singleBlocks: [],
+				wholeCategories: [],
+				singleBlocks: ['controls_repeat_ext','controls_if'],
 				excludedBlocks: [],
 			},
 		},
@@ -83,11 +113,11 @@ function initTask(subTask) {
 		backgroundTile: false,
 		borderColour: "lightgrey",
 
-		cellSide: 80,	
+		cellSide: 60,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["tabornik_all_8_sides.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["tabornik_all_8_sides.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["tree_transparent.png"], zOrder: 1, category: {'obstacle': true}},
 			coin: {num:3, img:["egg.png"],zOrder: 8, category:{'transportable':true}},
 		},

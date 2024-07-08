@@ -20,6 +20,7 @@ function initTask(subTask) {
 				},
 				messages:{
 					itemsExist: "Niso uspeli u ukrasti zaklad.",
+					itemsDontExist: "Ukradli so zaklad",
 				},
 				options:{
 					robotName0: "Pišče", 
@@ -79,11 +80,12 @@ function initTask(subTask) {
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					"move",
+					//"move",
+					"forwardSimple",
 					"turn",
-					"turnAround",
+					//"turnAround",
 					"changeRobot",
-					"transport",
+					//"transport",
 					],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
 			},

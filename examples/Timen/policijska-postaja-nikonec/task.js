@@ -15,17 +15,21 @@ function initTask(subTask) {
 		languageStrings: {
 			sl: {
 
-				label:{sensorBool1:"ovira spredaj "},//languegae za novi delček
-				code:{sensorBool1:"oviraSpredaj"},
-				description:{sensorBool1:"Preveri ali je ovira spredaj"},
-
-				label:{sensorBool2:"ovira desno"},//languegae za novi delček
-				code:{sensorBool2:"oviraDesno"},
-				description:{sensorBool2:"Preveri ali je ovira desno"},
-
-				label:{sensorBool3:"ovira levo"},//languegae za novi delček
-				code:{sensorBool3:"oviraLevo"},
-				description:{sensorBool3:"Preveri ali je ovira levo"},
+				lable:{
+					sensorBool1:"ovira spredaj",
+					sensorBool2:"ovira desno",
+					sensorBool3:"ovira levo",
+				},
+				code:{
+					sensorBool1:"oviraSpredaj",
+					sensorBool2:"oviraDesno",
+					sensorBool3:"oviraLevo",
+				},
+				description:{
+					sensorBool1:"Preveri ali je ovira spredaj",
+					sensorBool2:"Preveri ali je ovira desno",
+					sensorBool3:"Preveri ali je ovira levo",
+				},
 
 				startingBlockName: "Program",	
 				categories: {				
@@ -119,7 +123,7 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["car.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
+			robot: { img: ["car.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img: "dirt.png", zOrder: 1, category: {'obstacle': true}},
 			coin :{ num:3,img:["finish_transparent.png"],side: 80,zOrder: 2, category:{"coin":true}},
 		}, 
@@ -141,7 +145,7 @@ function initTask(subTask) {
 					],
 					
 				initItems: [
-					{ row: 6, col: 1, dir: 0, type: "robot0" },
+					{ row: 6, col: 1, dir: 0, type: "robot" },
 					
 					
 				],
@@ -158,7 +162,7 @@ function initTask(subTask) {
 				],
 									
 				initItems: [
-					{ row: 6, col: 1, dir: 0, type: "robot0" },
+					{ row: 6, col: 1, dir: 0, type: "robot" },
 					
 					
 				],
@@ -175,7 +179,7 @@ function initTask(subTask) {
 				],
 									
 				initItems: [
-					{ row: 6, col: 2, dir: 0, type: "robot0" },
+					{ row: 6, col: 2, dir: 0, type: "robot" },
 					
 					
 				],

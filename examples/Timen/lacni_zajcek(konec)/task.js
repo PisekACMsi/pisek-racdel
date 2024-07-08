@@ -71,10 +71,10 @@ function initTask(subTask) {
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					"move",
-					"forward",
+					//"move",
+					"forwardSimple",
 					"turn",
-					"turnAround",
+					//"turnAround",
 					"sensorBool"
 				],
 				// robot:  ["left","right","north","west","east","south","changeRobot", "pickTransportable","dropTransportable"],
