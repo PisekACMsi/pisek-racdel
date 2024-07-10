@@ -23,10 +23,10 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Mucek je lačen",
-					itemsDontExist: "Mucek se je najedel",
-					itemsCoincide: "Mucek je doma ",
-					itemsDontCoincide: "Mucek ni doma",
+					itemsExist: "Posast je lačea",
+					itemsDontExist: "Posast se je najedela",
+					itemsCoincide: "Posast je doma ",
+					itemsDontCoincide: "Posast ni doma",
 				},
 	
 			},
