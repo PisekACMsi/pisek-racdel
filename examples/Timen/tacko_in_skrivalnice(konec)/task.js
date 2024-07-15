@@ -83,16 +83,17 @@ function initTask(subTask) {
 			
 		border: 0.05,
 		backgroundColour: "white",
-		backgroundTile: false,
+		backgroundTile: "grass.png",
 		borderColour: "grey",
 
-		cellSide: 80,	
+		cellSide: 60,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
 			robot0: { img: ["dog_all_8_sides.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
-			coin1: {num:3, img:["star.png"],zOrder: 2, category:{"coin":true}},
+			coin1: {num:3, img:["kost.png"],zOrder: 2, category:{"coin":true}},
 			coin :{ img:["miha_all_8_sides.png"],side: 60, nbStates: 8,zOrder: 8, category:{"konec":true}},
+			obstacle: { num: 2, img: "tree_with_grass.png", zOrder: 1, category: {'obstacle': true}},
 		}, 
 		ignoreInvalidMoves: false,
 	};
@@ -101,17 +102,17 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],//15x11
-					[1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 3, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 3, 3, 3, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 3, 1, 3, 3, 3, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 3, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], // 15x11
+					[2, 1, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 3, 2, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 3, 2, 3, 3, 3, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 					
 				],
 				initItems: [

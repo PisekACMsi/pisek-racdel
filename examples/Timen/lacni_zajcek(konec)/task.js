@@ -15,8 +15,8 @@ function initTask(subTask) {
 		languageStrings: {
 			sl: {
 
-				label:{sensorBool:"Sedimo na puščici"},//languegae za novi delček
-				code:{sensorBool:"SedimoNaPiscici"},
+				label:{sensorBool:"Smo na puščici"},//languegae za novi delček
+				code:{sensorBool:"SmoNaPiscici"},
 				description:{sensorBool:"Preveri ali se nahajamo na puščici"},
 
 				startingBlockName: "Program",	
@@ -105,6 +105,7 @@ function initTask(subTask) {
 			robot0: { img: ["zajcek.png"], side: 140,offsetX: -20,offsetY: 30, nbStates: 1, zOrder: 8, category: {'robot': true}, },
 			coin: {num:3, img:["korenje.png"],side: 100,zOrder: 2, category:{"coin":true}},
 			smer: {num:4, img:["puscica_gor.png"],zOrder: 2,offsetY: 15,category:{"zastava":true}},
+			obstacle: { num: 2, img: "earth2.png", zOrder: 1, category: {'obstacle': true}},
 		
 		}, 
 		ignoreInvalidMoves: false,
@@ -114,11 +115,11 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 3, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 4, 1],
-					[1, 1, 1, 1, 1, 4, 1, 1, 1, 1],
-					[1, 1, 1, 4, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 2, 1, 1, 1, 2, 1, 1],
+					[1, 2, 1, 1, 1, 1, 1, 1, 3, 1],
+					[1, 1, 1, 2, 1, 1, 1, 1, 4, 1],
+					[1, 1, 1, 1, 1, 4, 1, 2, 1, 1],
+					[1, 1, 1, 4, 2, 1, 1, 1, 1, 1],
 					
 					
 				],
@@ -130,11 +131,11 @@ function initTask(subTask) {
 			},
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 3],
-					[1, 1, 1, 1, 1, 1, 4, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 4, 1, 1, 1],
-					[1, 4, 1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 2, 1, 1, 1, 1, 1, 1, 3],
+					[1, 2, 1, 1, 2, 1, 4, 1, 2, 1],
+					[1, 1, 1, 1, 1, 1, 4, 2, 1, 1],
+					[1, 4, 2, 1, 2, 1, 2, 1, 1, 1],
+					[1, 1, 1, 2, 1, 1, 1, 1, 2, 1],
 					
 					
 				],
@@ -146,11 +147,11 @@ function initTask(subTask) {
 			},
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 1, 1, 3, 1],
-					[1, 1, 1, 1, 1, 1, 4, 1, 1, 1],
-					[1, 1, 1, 4, 1, 1, 1, 1, 1, 1],
-					[1, 1, 4, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 4, 1, 1, 1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 2, 1, 1, 1, 3, 1],
+					[1, 2, 1, 1, 1, 1, 4, 2, 1, 1],
+					[2, 1, 1, 4, 1, 1, 1, 1, 1, 1],
+					[1, 1, 4, 1, 1, 2, 1, 1, 2, 1],
+					[1, 1, 4, 2, 1, 1, 1, 2, 1, 1],
 					
 					
 				],
