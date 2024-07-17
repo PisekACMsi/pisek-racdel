@@ -108,7 +108,7 @@ function initTask(subTask) {
 			coin: {num:3, img:["fish_fresh.png"],zOrder: 3, category:{"transportable":true}},
 			rib:{ img:["fish_eaten.png"],zOrder: 2, category:{"rib":true}},
 
-			coin2: {num:4, img:["yellow_house.png"],zOrder: 8, category:{"konec":true}},
+			coin2: {num:4, img:["postelja.png"],zOrder: 8, category:{"konec":true}},
 			//holeR: { num: 41, img: "nest_red.png", zOrder: 6, category: {'hole':true}},
 			// kako naj preverim pravilno zaporedje pobirnaja stvari===================================================================
 			obstacle: { num: 2, img: "boulder.png",  zOrder: 8, category: {'obstacle':true}, },
