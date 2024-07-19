@@ -19,8 +19,8 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsCoincide: "Robotek je prišel domov",
-					itemsDontCoincide: "Robotek ni prišel domov",
+					itemsCoincide: "Robotek je na polnilni postaji. ",
+					itemsDontCoincide: "Robotek ni prišel do polnilne postaje. ",
 				},
 	
 			},
@@ -49,7 +49,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 6,
+		maxInstructions: 10,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -82,13 +82,13 @@ function initTask(subTask) {
 		backgroundTile: false,
 		borderColour: "grey",
 
-		cellSide: 80,	
+		cellSide: 60,	
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["green_robot2.png"], side: 80, nbStates: 9, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["green_robot2.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["dirt.png"], zOrder: 1, category: {'obstacle': true}},
-			dom: {num:3, img:["finish2.png"],zOrder: 8, category:{"dom":true}},
+			dom: {num:3, img:["uticnica.png"],side: 60,zOrder: 8, category:{"dom":true}},
 		},
 
 		ignoreInvalidMoves: false,
@@ -99,9 +99,9 @@ function initTask(subTask) {
 			{
 				tiles: [
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 1, 3, 2, 2, 2, 2],
-					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 3, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 1, 2, 2, 2],
+					[2, 2, 2, 2, 1, 1, 1, 2, 2, 2],
 					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
 					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
 					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
@@ -138,19 +138,19 @@ function initTask(subTask) {
 				
 				tiles: [
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 1, 1, 1, 3, 2, 2],
-					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 3, 2, 2],
+					[2, 2, 2, 2, 2, 1, 1, 1, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2],
+					[2, 2, 2, 1, 1, 1, 2, 2, 2, 2],
+					[2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
+					[2, 1, 1, 1, 2, 2, 2, 2, 2, 2],
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]			
 									
 				],
 				initItems: [
-					{ row: 8, col: 4, dir: 6, type: "robot0" },
+					{ row: 8, col: 1, dir: 6, type: "robot0" },
 
 				],
 			},
@@ -158,19 +158,19 @@ function initTask(subTask) {
 				
 				tiles: [
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 1, 1, 1, 1, 2, 2, 2],
-					[2, 2, 2, 1, 2, 2, 1, 2, 2, 2],
-					[2, 2, 2, 1, 2, 2, 3, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 3, 2, 2],
+					[2, 2, 2, 2, 2, 1, 1, 1, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2],
+					[2, 2, 2, 1, 1, 1, 2, 2, 2, 2],
+					[2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
+					[2, 1, 1, 1, 2, 2, 2, 2, 2, 2],
+					[2, 1, 2, 2, 2, 2, 2, 2, 2, 2],
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2]			
 									
 				],
 				initItems: [
-					{ row: 6, col: 3, dir: 6, type: "robot0" },
+					{ row: 8, col: 1, dir: 6, type: "robot0" },
 
 				],
 			},

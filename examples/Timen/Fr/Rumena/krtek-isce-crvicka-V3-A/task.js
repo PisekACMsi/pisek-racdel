@@ -85,7 +85,7 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 10,
+		maxInstructions: 9,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
@@ -94,7 +94,7 @@ function initTask(subTask) {
 					//"forwardSimple",
 					//"turn",			//samo levo in desno
 					//"turnAround",
-					"sensorBool1",
+					//"sensorBool1", //zaznavanje ovire 
 					"sensorBool2",
 					"pojej"
 					
@@ -104,12 +104,12 @@ function initTask(subTask) {
 			standardBlocks: {
 				includeAll: false,
 				wholeCategories: [],
-				singleBlocks: ['controls_repeat_ext','controls_if','controls_whileUntil'],
+				singleBlocks: ['controls_repeat_ext','controls_whileUntil'],
 				excludedBlocks: [],
 			},
 		},
 		startingExample: { //vnaprej podana koda ukazov
-			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"></block><additional>{}</additional></xml>',
+			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"></block><block type="controls_whileUntil" id="RVuO`F?bIBnLF4/GqjCw" x="58" y="93"><field name="MODE">UNTIL</field><value name="BOOL"><block type="sensorBool2" id=":[3h=LbM~M`fO#,4?9s."></block></value><statement name="DO"><block type="controls_if" id="L1uotr2`AAj]|c,!orne"><statement name="DO0"><block type="moveSimple" id="@~eBGA`U}jQG](h61I}u"><field name="PARAM_0">N</field></block></statement><next><block type="moveSimple" id="V@QJ?.,MmqeGhw]?#L{F"><field name="PARAM_0">E</field></block></next></block></statement><next><block type="pojej" id="F[NN:,saC2x;A5?wj*j4"></block></next></block><additional>{}</additional></xml>',
 		},					
 		checkEndEveryTurn: false,		//kako pogosto preverjamo uspešnost rešitve
 		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "transportable"},{},exist=false ).checkReachGreenArea(context, lastTurn)},
@@ -124,7 +124,7 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["krtek_8_strani.png"], side: 60, nbStates: 8, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["krtek_8_strani.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["rocks.png"], zOrder: 1, category: {'obstacle': true}},
 			crvicek: {num:3, img:["caterpillar_transparent.png"],zOrder: 8, category:{"transportable":true}},
 		},
@@ -136,19 +136,22 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]	
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 					
 				],
 				initItems: [
-					{ row: 7, col: 1, dir: 0, type: "robot0" },
+					{ row: 1, col: 13, dir: 4, type: "robot0" },
 				],
 			},
 			

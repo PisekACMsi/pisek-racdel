@@ -15,11 +15,11 @@ function initTask(subTask) {
 		languageStrings: {
 			sl: {
 				
-				label:{sensorBool1:"je spredaj kamen ",
+				label:{sensorBool1:"je spredaj kamen",
 					sensorBool2:"Našli smo črvička",
 					pojej:"Pojej črvička"
 				},
-				code:{sensorBool1:"JeSpredajKamen",
+				code:{sensorBool1:"KamenJeSpredaj",
 					sensorBool2:"NasliSmoCrvicka",
 					pojej:"PojejCrvicka"
 				},
@@ -90,9 +90,9 @@ function initTask(subTask) {
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					//"moveSimple",
-					"forwardSimple",
-					"turn",			//samo levo in desno
+					"moveSimple",
+					//"forwardSimple",
+					//"turn",			//samo levo in desno
 					//"turnAround",
 					"sensorBool1",
 					"sensorBool2",
@@ -104,7 +104,7 @@ function initTask(subTask) {
 			standardBlocks: {
 				includeAll: false,
 				wholeCategories: [],
-				singleBlocks: ['controls_repeat_ext','controls_if','controls_whileUntil','controls_if_else'],
+				singleBlocks: ['controls_repeat_ext','controls_if','controls_whileUntil'],
 				excludedBlocks: [],
 			},
 		},
@@ -124,7 +124,7 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["krtek_8_strani.png"], side: 70, nbStates: 9, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["krtek_8_strani.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["rocks.png"], zOrder: 1, category: {'obstacle': true}},
 			crvicek: {num:3, img:["caterpillar_transparent.png"],zOrder: 8, category:{"transportable":true}},
 		},
@@ -134,26 +134,6 @@ function initTask(subTask) {
 
 	subTask.data = {
 		easy: [
-			{
-				tiles: [
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 3, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-						
-					
-				],
-				initItems: [
-					{ row: 1, col: 17, dir: 4, type: "robot0" },
-				],
-			},
 			{
 				tiles: [
 					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],

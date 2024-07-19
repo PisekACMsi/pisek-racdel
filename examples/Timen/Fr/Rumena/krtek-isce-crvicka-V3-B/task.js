@@ -15,11 +15,11 @@ function initTask(subTask) {
 		languageStrings: {
 			sl: {
 				
-				label:{sensorBool1:"je spredaj kamen ",
+				label:{sensorBool1:"Kamen je spredaj",
 					sensorBool2:"Našli smo črvička",
 					pojej:"Pojej črvička"
 				},
-				code:{sensorBool1:"JeSpredajKamen",
+				code:{sensorBool1:"KamenJeSpredaj",
 					sensorBool2:"NasliSmoCrvicka",
 					pojej:"PojejCrvicka"
 				},
@@ -85,16 +85,16 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 10,
+		maxInstructions: 9,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					//"moveSimple",
-					"forwardSimple",
-					"turn",			//samo levo in desno
+					"moveSimple",
+					//"forwardSimple",
+					//"turn",			//samo levo in desno
 					//"turnAround",
-					"sensorBool1",
+					//"sensorBool1", //zaznavanje ovire 
 					"sensorBool2",
 					"pojej"
 					
@@ -104,12 +104,12 @@ function initTask(subTask) {
 			standardBlocks: {
 				includeAll: false,
 				wholeCategories: [],
-				singleBlocks: ['controls_repeat_ext','controls_if','controls_whileUntil','controls_if_else'],
+				singleBlocks: ['controls_repeat_ext','controls_whileUntil'],
 				excludedBlocks: [],
 			},
 		},
 		startingExample: { //vnaprej podana koda ukazov
-			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"></block><additional>{}</additional></xml>',
+			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="controls_repeat_ext" id="~N*/,U}#s?Q{SQ8hT:cU"><comment pinned="false" h="71" w="168">vzorec se ponovi 3-krat</comment><value name="TIMES"><shadow type="math_number" id="8Stm_`Esx}PtLC5=A-Dy"><field name="NUM">3</field></shadow></value><statement name="DO"><block type="controls_repeat_ext" id=")?p+)dBU-Ds6!k_gOKVB"><comment pinned="false" h="68" w="175">3 koraki v navpični smeri</comment><value name="TIMES"><shadow type="math_number" id="3g=W(:3cOPsNhoFUfC#p"><field name="NUM">3</field></shadow></value><statement name="DO"><block type="moveSimple" id="KUo:4QtTL)e3?PmfUi`-"><field name="PARAM_0">S</field></block></statement><next><block type="controls_repeat_ext" id="C9ZhW5h`Iw0Q9C?H|tXe"><comment pinned="false" h="67" w="169">4 koraki v vodoravni smeri</comment><value name="TIMES"><shadow type="math_number" id="Z.s`Y?tD183ZaKyNs/Gu"><field name="NUM">4</field></shadow></value><statement name="DO"><block type="moveSimple" id="~{[hLlMn)~M-f{`?W#@K"><field name="PARAM_0">W</field></block></statement></block></next></block></statement><next><block type="pojej" id="fOM?gTStjR+b-EXH9z5A"></block></next></block></next></block><additional>{}</additional></xml>',
 		},					
 		checkEndEveryTurn: false,		//kako pogosto preverjamo uspešnost rešitve
 		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "transportable"},{},exist=false ).checkReachGreenArea(context, lastTurn)},
@@ -124,7 +124,7 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["krtek_8_strani.png"], side: 70, nbStates: 9, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["krtek_8_strani.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["rocks.png"], zOrder: 1, category: {'obstacle': true}},
 			crvicek: {num:3, img:["caterpillar_transparent.png"],zOrder: 8, category:{"transportable":true}},
 		},
@@ -136,39 +136,22 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 3, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-						
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
 					
 				],
 				initItems: [
-					{ row: 1, col: 17, dir: 4, type: "robot0" },
-				],
-			},
-			{
-				tiles: [
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 3, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-					[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]	
-					
-				],
-				initItems: [
-					{ row: 1, col: 17, dir: 4, type: "robot0" },
+					{ row: 1, col: 13, dir: 4, type: "robot0" },
 				],
 			},
 			
