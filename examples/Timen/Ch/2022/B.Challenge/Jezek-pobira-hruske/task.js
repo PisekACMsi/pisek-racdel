@@ -19,7 +19,8 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Pišek ni pobral vseh jajčk",
+					itemsExist: "Ježek ni pobral vseh hrušk. ",
+					itemsDontExist: "Ježek je pobral vse hruške. ",
 				},
 	
 			},
@@ -48,13 +49,13 @@ function initTask(subTask) {
 		},
 		actionDelay: 400,				//parameter za časovni zamik med izvajanjem ukazov -  ne deulje??
 		blocklyColourTheme: "bwinf",	//izbira seta barv za bloke ukazov
-		maxInstructions: 12,
+		maxInstructions: 16,
 		includeBlocks: {						//dovoljeni ukazi 
 			groupByCategory: true,
 			generatedBlocks: {
 				robot:  [
-					//"move",
-					"forward",
+					"move",
+					"forwardSimple",
 					"turn",     
 					//"turnAround",
 					
@@ -69,11 +70,11 @@ function initTask(subTask) {
 			},
 		},
 		startingExample: { //vnaprej podana koda ukazov
-			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"></block><additional>{}</additional></xml>',
+			blockly: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="robot_start" id="g[RG~e=aB:orky#Iq!_T" deletable="false" movable="false" editable="false" x="0" y="0"><next><block type="controls_repeat_ext" id="*GISSJ@xrB4zVQ@PcZBC"><value name="TIMES"><shadow type="math_number" id="Vy921xS|sk0#Kfk=bN[B"><field name="NUM">3</field></shadow></value><statement name="DO"><block type="move" id="Mj/71qE!e!6miu7Sj{BW"><field name="PARAM_0">E</field><value name="PARAM_1"><shadow type="math_number" id="3~cw2Hk(?XILN!(KK}gP"><field name="NUM">1</field></shadow></value></block></statement></block></next></block><additional>{}</additional></xml>',
 		},					
 		checkEndEveryTurn: false,		//kako pogosto preverjamo uspešnost rešitve
 		checkEndCondition:  (context, lastTurn) => { robotEndConditions.checkItemExistence(context, lastTurn, {category: "coin", value: 0}, {}, exist=false).checkReachGreenArea(context, lastTurn)},
-		computeGrade: robotGradeFunctions.allOrNothing,//0000000000000000000000000000000000000000000000000000000000000 kako prevrimo pozicijo
+		computeGrade: robotGradeFunctions.allOrNothing,
 			
 		border: 0.05,
 		backgroundColour: "green",
@@ -84,9 +85,9 @@ function initTask(subTask) {
 		numberOfRobots: 1,
 		// only categories: robot, obstacle, transportable, coin, button --> are HARDCODED
 		itemTypes: {
-			robot0: { img: ["pisek_all_8_sides.png"], side: 75, nbStates: 9, zOrder: 8, category: {'robot': true}, },
+			robot0: { img: ["krtek_8_strani.png"], side: 75, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["mango_tree_transparent.png"], zOrder: 1, category: {'obstacle': true}},
-			coin: {num:3, img:["egg.png"],zOrder: 8, category:{"coin":true}},
+			coin: {num:3, img:["hruska.png"],zOrder: 8, category:{"coin":true}},
 		},
 
 		ignoreInvalidMoves: false,
@@ -96,18 +97,13 @@ function initTask(subTask) {
 		easy: [
 			{
 				tiles: [
-					[1, 1, 1, 1, 1, 1, 2, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 2, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 1, 1, 1, 1],
-					[1, 1, 1, 1, 2, 1, 2, 1],
-						
+					[1, 2, 2, 2, 1, 2, 2, 1, 1, 1],
+					[1, 3, 2, 3, 3, 2, 3, 1, 2, 3],
+					[1, 3, 1, 3, 3, 1, 3, 1, 1, 3],
+					[2, 1, 1, 1, 2, 1, 2, 1, 2, 2],	
 				],
 				initItems: [
-					{ row: 3, col: 0, dir: 0, type: "robot0" },
+					{ row: 2, col: 0, dir: 0, type: "robot0" },
 
 				],
 			},

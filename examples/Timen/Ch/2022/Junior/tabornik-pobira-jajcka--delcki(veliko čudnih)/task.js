@@ -119,7 +119,7 @@ function initTask(subTask) {
 		itemTypes: {
 			robot0: { img: ["tabornik_all_8_sides.png"], side: 60, nbStates: 9, zOrder: 8, category: {'robot': true}, },
 			obstacle: { num: 2, img:["tree_transparent.png"], zOrder: 1, category: {'obstacle': true}},
-			coin: {num:3, img:["egg.png"],zOrder: 8, category:{'transportable':true}},
+			coin: {num:3, img:["storz.png"],zOrder: 8, category:{'transportable':true}},
 		},
 
 		ignoreInvalidMoves: false,

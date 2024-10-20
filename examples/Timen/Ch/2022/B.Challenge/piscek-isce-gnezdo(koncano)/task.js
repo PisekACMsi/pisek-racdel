@@ -24,7 +24,7 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					//itemsExist: "Pišček ni prišel do gnezda",
+					//itemsExist: "Pišek ni prišel do gnezda",
 					itemsCoincide: "Pišče je našel gnezdo. ",
 					itemsDontCoincide: "Pišče ni prišel do gnezda. ",
 

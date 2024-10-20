@@ -19,7 +19,7 @@ function initTask(subTask) {
 				   actions: "Gibanje",
 				},
 				messages:{
-					itemsExist: "Pišček ni pobral vseh jajčk",
+					itemsExist: "Pišek ni pobral vseh jajčk",
 				},
 	
 			},
